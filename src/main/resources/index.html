@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<body>
+  To view crash events within a given radius, enable selection and click anywhere on the map.<br>
+  Click a marker to see more details about the crash event.<br><hr>
+  <div id="control">
+    Enable Selection:
+    <input id="selection" type="checkbox" name="selection"><br>
+    Radius (meters):
+    <input id="slider" type="range" min="1" max="1000" step="1" onchange="updateTextInput(this.value);">
+    <input type="text" id="textInput" value="500" readonly><br>
+  </div>
+  <div id="map"></div>
+  <script src="js/index.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDdcuf8uV_tiI_5zpj6wMPrand3b759Edg&libraries=visualization&callback=initMap"
+          async defer></script>
+</body>
+<head>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <title>VicRoads Crash Data</title>
+  <meta name="viewport" content="initial-scale=1.0">
+  <meta charset="utf-8">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+    }
+    #map {
+      height: 100%;
+    }
+  </style>
+</head>
+</html>
